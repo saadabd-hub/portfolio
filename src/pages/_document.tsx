@@ -5,10 +5,11 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {(process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview') && (
+          // eslint-disable-next-line @next/next/no-sync-scripts
           <script
-          data-project-id={process.env.METICULOUS_PROJECT_ID}
-          src="https://snippet.meticulous.ai/v1/meticulous.js"
-        />
+            data-project-id={process.env.METICULOUS_PROJECT_ID}
+            src="https://snippet.meticulous.ai/v1/meticulous.js"
+          />
         )}      
       </Head>
       <body>
