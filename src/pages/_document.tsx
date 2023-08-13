@@ -15,7 +15,7 @@ export default function Document() {
             src="https://snippet.meticulous.ai/v1/meticulous.js"
           />
         )}
-        <meta httpEquiv='Content-Security-Polic' content={cspConfig}/>
+        <meta httpEquiv='Content-Security-Policy' content={cspConfig}/>
       </Head>
       <body>
         <Main />
