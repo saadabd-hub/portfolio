@@ -4,6 +4,13 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    // breakpoints
+    screens: {
+      'mobile': '768px',
+      'tablet': { 'min': '768px', 'max': '1024px' },
+      'desktop': '1024px'
+    },
+    // colors
     colors: {
       gray: {
         950: '#030712',

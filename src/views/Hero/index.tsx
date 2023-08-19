@@ -6,23 +6,31 @@ import Image from 'next/image';
 import HeroPic from '@/assets/img/hero.jpeg'
 import { useRouter } from 'next/router';
 import useIntersectionObserver from '@/utils/useIntersectionObserver';
+import LinkedlnIcon from '@/assets/svg/LinkedlnIcon';
 
 const Hero = () => {
 
   const router = useRouter();
   const heroRef = React.useRef<HTMLDivElement>(null);
   const isSectionVisible = useIntersectionObserver(heroRef, {
-    threshold: 1
+    threshold: 0.9,
+    rootMargin: '0px 0px'
   });
+
 
   React.useEffect(() => {
     if (isSectionVisible) {
-      router.push('/#');
+      router.push('/');
     }
   }, [isSectionVisible]);
 
-  const onClickIcon = React.useCallback(() => {
-    return router.push('https://github.com/saadabd-hub' , undefined, { shallow: true })
+  const onClickIcon = React.useCallback((type: string) => {
+    if (type == 'github'){
+      return window.open('https://github.com/saadabd-hub', '_blank', 'noreferrer');
+    }
+    if (type == 'linkedin'){
+      return window.open('https://www.linkedin.com/in/abdullah-saad-93a0181b3', '_blank', 'noreferrer');
+    }
   }, [router])
 
   return (
@@ -36,13 +44,16 @@ const Hero = () => {
           <div id="group" className="self-stretch h-14 flex-col justify-center items-start gap-4 flex">
             <div id="location" className="self-stretch justify-start items-center gap-2 inline-flex">
               <MarkLocationIcon height={24} width={24} className="w-6 h-6 relative"/>
-              <p className="text-gray-300 text-base font-normal leading-normal">Yogyakarta, Indonesia</p>
+              <p className="text-gray-300 text-base font-normal leading-normal">Banten, Indonesia</p>
             </div>
           </div>
           <div id="action" className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
             <div id="link" className="justify-start items-center gap-1 inline-flex">
-              <button className="p-1.5 rounded-lg justify-center items-center flex" onClick={onClickIcon}>
+              <button className="p-1.5 rounded-lg justify-center items-center flex" onClick={() => onClickIcon('github')}>
                 <GithubIcon height={24} width={24} className="w-6 h-6 relative"/>
+              </button>
+              <button className="p-1.5 rounded-lg justify-center items-center flex" onClick={() => onClickIcon('linkedin')}>
+                <LinkedlnIcon height={24} width={24} className="w-6 h-6 relative"/>
               </button>
             </div>
           </div>

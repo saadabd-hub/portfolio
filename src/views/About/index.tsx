@@ -8,7 +8,7 @@ const About = () => {
   const router = useRouter();
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const isSectionVisible = useIntersectionObserver(aboutRef, {
-    threshold: 1
+    threshold: 0.9
   });
 
   React.useEffect(() => {
