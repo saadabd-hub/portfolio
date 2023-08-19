@@ -1,7 +1,6 @@
 import GithubIcon from '@/assets/svg/GithubIcon';
 import MarkLocationIcon from '@/assets/svg/MarkLocationIcon';
-import React, { FC } from 'react';
-import useCustomHooks from './hooks';
+import React from 'react';
 import Image from 'next/image';
 
 import HeroPic from '@/assets/img/hero.jpeg'
@@ -11,7 +10,6 @@ import useIntersectionObserver from '@/utils/useIntersectionObserver';
 const Hero = () => {
 
   const router = useRouter();
-  const { methods } = useCustomHooks();
   const heroRef = React.useRef<HTMLDivElement>(null);
   const isSectionVisible = useIntersectionObserver(heroRef, {
     threshold: 1
@@ -22,6 +20,10 @@ const Hero = () => {
       router.push('/#');
     }
   }, [isSectionVisible]);
+
+  const onClickIcon = React.useCallback(() => {
+    return router.push('https://github.com/saadabd-hub' , undefined, { shallow: true })
+  }, [router])
 
   return (
     <section ref={heroRef} id='hero' className="w-full h-auto px-20 py-24 bg-gray-950 justify-between items-start gap-2.5 inline-flex">
@@ -39,7 +41,7 @@ const Hero = () => {
           </div>
           <div id="action" className="self-stretch h-9 flex-col justify-start items-start gap-4 flex">
             <div id="link" className="justify-start items-center gap-1 inline-flex">
-              <button className="p-1.5 rounded-lg justify-center items-center flex" onClick={methods.onClickIcon}>
+              <button className="p-1.5 rounded-lg justify-center items-center flex" onClick={onClickIcon}>
                 <GithubIcon height={24} width={24} className="w-6 h-6 relative"/>
               </button>
             </div>

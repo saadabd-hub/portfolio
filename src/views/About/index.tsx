@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Pic from '@/assets/img/about-me.jpeg'
 import { useRouter } from 'next/router';
@@ -8,7 +8,7 @@ const About = () => {
   const router = useRouter();
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const isSectionVisible = useIntersectionObserver(aboutRef, {
-    threshold: 0.9
+    threshold: 1
   });
 
   React.useEffect(() => {
