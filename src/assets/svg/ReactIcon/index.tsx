@@ -1,3 +1,4 @@
+import Icon from '@/components/common/Icon';
 import { IconProps } from '@/types';
 import React, { FC } from 'react';
 
@@ -6,19 +7,9 @@ const ReactIcon:FC<IconProps> = ({
   height,
   className
 }) => {
-  const viewBox = React.useMemo(() => {
-    return `0 0 ${width} ${height}`
-  }, [height, width])
 
   return (
-    <svg 
-      width={width}
-      height={height}
-      viewBox={viewBox}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
+    <Icon width={width} height={height} className={className}>
       <g clipPath="url(#clip0_327_1876)">
         <path d="M35.6572 38.7725C39.3295 38.7725 42.3065 35.7404 42.3065 32C42.3065 28.2597 39.3295 25.2275 35.6572 25.2275C31.9848 25.2275 29.0078 28.2597 29.0078 32C29.0078 35.7404 31.9848 38.7725 35.6572 38.7725Z" fill="#087EA4"/>
         <path d="M35.6569 47.238C54.0186 47.238 68.9037 40.4157 68.9037 31.9999C68.9037 23.5842 54.0186 16.7618 35.6569 16.7618C17.2952 16.7618 2.41016 23.5842 2.41016 31.9999C2.41016 40.4157 17.2952 47.238 35.6569 47.238Z" stroke="#087EA4" strokeWidth="3"/>
@@ -30,7 +21,7 @@ const ReactIcon:FC<IconProps> = ({
           <rect width="69.8182" height="64" fill="white" transform="translate(0.748047)"/>
         </clipPath>
       </defs> 
-    </svg>
+    </Icon>
   )
 }
 
