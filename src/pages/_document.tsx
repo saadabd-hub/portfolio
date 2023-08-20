@@ -3,7 +3,7 @@ import { randomBytes } from 'crypto';
 
 export default function Document() {
   const nonce = randomBytes(128).toString('base64');
-  const cspConfig = `connect-src 'self' vitals.vercel-insights.com; object-src 'none'; base-uri 'none'; script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'strict-dynamic'`
+  const cspConfig = `connect-src 'self' vitals.vercel-insights.com; object-src 'none'; base-uri 'none'; script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`
 
   return (
     <Html lang="en">
