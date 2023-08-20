@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Pic from '@/assets/img/about-me.jpeg'
 import { useRouter } from 'next/router';

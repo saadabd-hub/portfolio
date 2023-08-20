@@ -16,13 +16,13 @@ const Header = () => {
           <Link passHref legacyBehavior href={'/#about'} className="justify-center items-center flex">
             <a className="text-gray-300 text-base font-medium leading-normal" onClick={() => methods.scrollToSection('about')}>About</a>
           </Link>
-          <Link passHref legacyBehavior href={'/experience'} className="justify-center items-center flex">
+          <Link passHref legacyBehavior href={'/#skills'} className="justify-center items-center flex">
+            <a className="text-gray-300 text-base font-medium leading-normal" onClick={() => methods.scrollToSection('skills')}>Skills</a>
+          </Link>
+          <Link passHref legacyBehavior href={'/#experience'} className="justify-center items-center flex">
             <a className="text-gray-300 text-base font-medium leading-normal">Experience</a>
           </Link>
-          <Link passHref legacyBehavior href={'/skills-tools'} className="justify-center items-center flex">
-            <a className="text-gray-300 text-base font-medium leading-normal">Skills & Tools</a>
-          </Link>
-          <Link passHref legacyBehavior href={'/contact'} className="justify-center items-center flex">
+          <Link passHref legacyBehavior href={'/#contact'} className="justify-center items-center flex">
             <a className="text-gray-300 text-base font-medium leading-normal">Contact</a>
           </Link>
           <span className="w-6 h-px -rotate-90 border border-gray-800"></span>
