@@ -5,6 +5,8 @@ import React from 'react';
 const HeroLayout = dynamic(() => import('@/views/Hero'))
 const AboutLayout = dynamic(() => import('@/views/About'))
 const SkillsLayout = dynamic(() => import('@/views/Skills'))
+const ExperienceLayout = dynamic(() => import('@/views/Experience'));
+const ContactLayout = dynamic(() => import('@/views/Contact'));
 
 const Layout = () => {
   const router = useRouter();
@@ -34,6 +36,8 @@ const Layout = () => {
       <HeroLayout/>
       <AboutLayout/>
       <SkillsLayout/>
+      <ExperienceLayout/>
+      <ContactLayout/>
     </>
   )
 }

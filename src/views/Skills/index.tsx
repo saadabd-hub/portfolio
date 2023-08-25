@@ -20,7 +20,7 @@ const SkillSection = () => {
   const router = useRouter();
   const skillRef = React.useRef<HTMLDivElement>(null);
   const isSectionVisible = useIntersectionObserver(skillRef, {
-    threshold: 1
+    threshold: 0.9
   });
 
   React.useEffect(() => {
