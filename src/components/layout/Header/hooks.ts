@@ -3,13 +3,12 @@ import { useCallback } from 'react';
 const useCustomHooks = () => {
 
   const onClickDownloadPdf = useCallback(() => {
-    // Replace 'path/to/your/pdf/file.pdf' with the actual path to your PDF file.
-    const pdfUrl = 'path/to/your/pdf/file.pdf';
+    const pdfUrl = 'https://drive.google.com/file/d/1zCl7Ia04nRDimWYs3ooIJcejGSSgoMTc/view?usp=sharing';
     const link = document.createElement('a');
 
     link.href = pdfUrl;
-    link.target = '_blank'; // Open in a new tab/window, if needed.
-    link.download = 'your_pdf_filename.pdf'; // Change 'your_pdf_filename' to the desired name for the downloaded file.
+    link.target = '_blank';
+    link.download = 'Abdullah_Saad.pdf';
 
     document.body.appendChild(link);
     link.click();

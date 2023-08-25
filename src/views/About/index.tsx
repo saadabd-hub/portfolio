@@ -18,7 +18,7 @@ const About = () => {
   }, [isSectionVisible]);
 
   return (
-    <section ref={aboutRef} id='about' className="w-full h-au px-20 py-24 bg-gray-900 justify-between items-start inline-flex">
+    <section ref={aboutRef} id='about' className="w-full h-auto px-20 py-24 bg-gray-900 justify-between items-start inline-flex">
       <div className="grow shrink basis-0 px-8 flex-col justify-start items-center gap-12 inline-flex">
         <div className="self-stretch h-7 flex-col justify-start items-start gap-4 flex">
           <div className="self-stretch h-7 flex-col justify-center items-center flex">
