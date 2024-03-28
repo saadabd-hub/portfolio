@@ -6,6 +6,5 @@ module.exports = {
   typescript: {
     ignoreBuildErrors: true
   },
-  output: 'standalone',
   compress: true
 }
