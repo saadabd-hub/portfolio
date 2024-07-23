@@ -1,24 +1,12 @@
-import React from 'react';
+import { AboutMeImg } from '@/assets/img';
 import Image from 'next/image';
-import Pic from '@/assets/img/about-me.jpeg'
-import { useRouter } from 'next/router';
-import useIntersectionObserver from '@/utils/useIntersectionObserver';
+import useCustomHooks from './hooks';
 
 const About = () => {
-  const router = useRouter();
-  const aboutRef = React.useRef<HTMLDivElement>(null);
-  const isSectionVisible = useIntersectionObserver(aboutRef, {
-    threshold: 0.9
-  });
-
-  React.useEffect(() => {
-    if (isSectionVisible) {
-      router.push('/#about');
-    }
-  }, [isSectionVisible]);
+  const { data } = useCustomHooks();
 
   return (
-    <section ref={aboutRef} id='about' className="w-full h-auto px-20 py-24 bg-gray-900 justify-between items-start inline-flex">
+    <section ref={data.aboutRef} id='about' className="w-full h-auto px-20 py-24 bg-gray-900 justify-between items-start inline-flex">
       <div className="grow shrink basis-0 px-8 flex-col justify-start items-center gap-12 inline-flex">
         <div className="self-stretch h-7 flex-col justify-start items-start gap-4 flex">
           <div className="self-stretch h-7 flex-col justify-center items-center flex">
@@ -31,7 +19,7 @@ const About = () => {
           <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start inline-flex">
             <div className="w-96 h-96 relative">
               <div className="w-96 h-96 left-0 top-[40px] absolute bg-gray-700 border-4 border-gray-900" />
-              <Image alt="hero-img" src={Pic} height={320} width={280} className="w-96 h-96 left-[40px] top-0 absolute border-4 border-gray-900 object-cover"/>
+              <Image alt="hero-img" src={AboutMeImg} height={320} width={280} className="w-96 h-96 left-[40px] top-0 absolute border-4 border-gray-900 object-cover" />
             </div>
           </div>
           <div className="grow shrink basis-0 self-stretch flex-col justify-start items-start gap-6 inline-flex">

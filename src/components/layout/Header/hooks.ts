@@ -1,7 +1,8 @@
+import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 
 const useCustomHooks = () => {
-
+  const router = useRouter()
   const onClickDownloadPdf = useCallback(() => {
     const pdfUrl = 'https://drive.google.com/file/d/1zCl7Ia04nRDimWYs3ooIJcejGSSgoMTc/view?usp=sharing';
     const link = document.createElement('a');
@@ -20,10 +21,15 @@ const useCustomHooks = () => {
     if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
+  const isActiveRoute = useCallback((route: string) => {
+    return router.asPath === route;
+  }, [router])
+
   return {
     methods: {
       onClickDownloadPdf,
-      scrollToSection
+      scrollToSection,
+      isActiveRoute
     }
   }
 }

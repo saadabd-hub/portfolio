@@ -1,24 +1,12 @@
-import useIntersectionObserver from '@/utils/useIntersectionObserver';
-import { useRouter } from 'next/router';
-import React from 'react';
 import RfLogo from '@/assets/img/refactory-logo.png';
 import Image from 'next/image';
+import useCustomHooks from './hooks';
 
-const Experince = () => {
-  const router = useRouter();
-  const expRef = React.useRef<HTMLDivElement>(null);
-  const isSectionVisible = useIntersectionObserver(expRef, {
-    threshold: 0.9
-  });
-
-  React.useEffect(() => {
-    if (isSectionVisible) {
-      router.push('/#experince');
-    }
-  }, [isSectionVisible]);
+const Experience = () => {
+  const { data } = useCustomHooks();
 
   return (
-    <section ref={expRef} id='experience' className='w-full h-auto px-20 py-24 bg-gray-900 flex-col justify-center items-center inline-flex'>
+    <section ref={data.expRef} id='experience' className='w-full h-auto px-20 py-24 bg-gray-900 flex-col justify-center items-center inline-flex'>
       <div className="self-stretch h-auto px-8 flex-col justify-center items-center gap-12 flex">
         <div className="self-stretch h-16 flex-col justify-start items-start gap-4 flex">
           <div className="self-stretch h-7 flex-col justify-center items-center flex">
@@ -61,4 +49,4 @@ const Experince = () => {
   )
 }
 
-export default Experince;
+export default Experience;

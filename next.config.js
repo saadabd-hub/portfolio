@@ -6,5 +6,12 @@ module.exports = {
   typescript: {
     ignoreBuildErrors: true
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "kjuapojjaqnevopw.public.blob.vercel-storage.com"
+      }
+    ]
+  },
   compress: true
 }

@@ -16,7 +16,12 @@ export default function Document() {
               data-is-production-environment="false"
               src="https://snippet.meticulous.ai/v1/meticulous.js"
             />
-            <meta httpEquiv='Content-Security-Policy' content={cspConfig} /></>
+          </>
+        )}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <meta httpEquiv='Content-Security-Policy' content={cspConfig} />
+          </>
         )}
       </Head>
       <body>

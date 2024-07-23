@@ -1,14 +1,15 @@
-import '~/globals.css'
-import type { AppProps } from 'next/app'
-import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { AppProps } from 'next/app';
+import '~/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-      <Analytics mode={'production'} />
+      {process.env.NODE_ENV === 'production' && (
+        <Analytics mode={'production'} />
+      )}
       <SpeedInsights />
     </>
   )

@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
 // Component
-import Navbar from '@/components/common/Navbar';
 import Button from '@/components/common/Button';
+import Navbar from '@/components/common/Navbar';
 import useCustomHooks from './hooks';
 
 const Header = () => {
@@ -13,17 +12,17 @@ const Header = () => {
       <div id="container" className="grow shrink basis-0 h-9 px-8 justify-between items-center gap-96 flex">
         <a className="text-center text-gray-50 text-3xl font-bold leading-9 cursor-pointer" onClick={() => methods.scrollToSection('hero')}>{'<Saad />'}</a>
         <div className="justify-center items-center gap-6 flex">
-          <Link passHref legacyBehavior href={'/#about'} className="justify-center items-center flex">
-            <a className="text-gray-300 text-base font-medium leading-normal" onClick={() => methods.scrollToSection('about')}>About</a>
+          <Link passHref legacyBehavior href={'/#about'}>
+            <a className={`text-base font-medium leading-normal ${methods.isActiveRoute('/#about') ? 'underline' : ''} text-gray-300 `} onClick={() => methods.scrollToSection('about')}>About</a>
           </Link>
-          <Link passHref legacyBehavior href={'/#skills'} className="justify-center items-center flex">
-            <a className="text-gray-300 text-base font-medium leading-normal" onClick={() => methods.scrollToSection('skills')}>Skills</a>
+          <Link passHref legacyBehavior href={'/#skills'}>
+            <a className={`text-base font-medium leading-normal ${methods.isActiveRoute('/#skills') ? 'underline' : ''} text-gray-300 `} onClick={() => methods.scrollToSection('skills')}>Skills</a>
           </Link>
-          <Link passHref legacyBehavior href={'/#experience'} className="justify-center items-center flex">
-            <a className="text-gray-300 text-base font-medium leading-normal">Experience</a>
+          <Link passHref legacyBehavior href={'/#experience'}>
+            <a className={`text-base font-medium leading-normal ${methods.isActiveRoute('/#experience') ? 'underline' : ''} text-gray-300 `}>Experience</a>
           </Link>
-          <Link passHref legacyBehavior href={'/#contact'} className="justify-center items-center flex">
-            <a className="text-gray-300 text-base font-medium leading-normal">Contact</a>
+          <Link passHref legacyBehavior href={'/#contact'}>
+            <a className={`text-base font-medium leading-normal ${methods.isActiveRoute('/#contact') ? 'underline' : ''} text-gray-300 `}>Contact</a>
           </Link>
           <span className="w-6 h-px -rotate-90 border border-gray-800"></span>
           <div className="justify-center items-center gap-4 flex">

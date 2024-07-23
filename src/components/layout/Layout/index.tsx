@@ -29,15 +29,15 @@ const Layout = () => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [router]);
 
   return (
     <>
-      <HeroLayout/>
-      <AboutLayout/>
-      <SkillsLayout/>
-      <ExperienceLayout/>
-      <ContactLayout/>
+      <HeroLayout />
+      <AboutLayout />
+      <SkillsLayout />
+      <ExperienceLayout />
+      <ContactLayout />
     </>
   )
 }

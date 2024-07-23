@@ -11,25 +11,26 @@
     "prepare": "husky install && chmod ug+x .husky/*"
   },
   "dependencies": {
-    "@types/node": "20.4.4",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "autoprefixer": "10.4.19",
     "eslint-config-next": "14.2.5",
     "next": "14.1.4",
     "postcss": "8.4.38",
-    "react": "18.3.1",
+    "randombytes": "^2.1.0",
+    "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "^0.33.3",
+    "sharp": "^0.33.4",
     "tailwindcss": "3.3.3",
     "typescript": "5.4.3"
   },
   "devDependencies": {
+    "@types/node": "^20.14.11",
+    "@types/randombytes": "^2.0.3",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.2.0",
-    "crypto": "^1.0.1",
     "eslint": "^8.45.0",
     "husky": "^8.0.0",
     "prettier": "3.0.0"
