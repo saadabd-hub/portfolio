@@ -15,7 +15,7 @@ export default async function Document() {
     return `connect-src 'self' vitals.vercel-insights.com; object-src 'none'; base-uri 'none'; script-src 'self' 'unsafe-inline' 'nonce-${nonce}' 'strict-dynamic'`;
   };
 
-  const loadMeticulousScript = (cspConfig: string) => {
+  const loadMeticulousScript = async (cspConfig: string) => {
     if (process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview') {
       return (
         <>
