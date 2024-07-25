@@ -19,11 +19,15 @@ const useCustomHooks = () => {
     }
   }, [])
 
+  const handleRouterPush = useCallback(() => {
+    router.push('/')
+  }, [router]);
+
   useEffect(() => {
     if (isSectionVisible) {
-      router.push('/');
+      handleRouterPush();
     }
-  }, [isSectionVisible]);
+  }, [isSectionVisible, heroRef]);
 
   return {
     methods: {
