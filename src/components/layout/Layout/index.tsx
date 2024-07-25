@@ -2,11 +2,11 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const HeroLayout = dynamic(() => import('@/views/Hero'))
-const AboutLayout = dynamic(() => import('@/views/About'))
-const SkillsLayout = dynamic(() => import('@/views/Skills'))
-const ExperienceLayout = dynamic(() => import('@/views/Experience'));
-const ContactLayout = dynamic(() => import('@/views/Contact'));
+const HeroViews = dynamic(() => import('@/views/Hero'))
+const AboutViews = dynamic(() => import('@/views/About'))
+const SkillsViews = dynamic(() => import('@/views/Skills'))
+const ExperienceViews = dynamic(() => import('@/views/Experience'));
+const ContactViews = dynamic(() => import('@/views/Contact'));
 
 const Layout = () => {
   const router = useRouter();
@@ -33,11 +33,11 @@ const Layout = () => {
 
   return (
     <>
-      <HeroLayout />
-      <AboutLayout />
-      <SkillsLayout />
-      <ExperienceLayout />
-      <ContactLayout />
+      <HeroViews />
+      <AboutViews />
+      <SkillsViews />
+      <ExperienceViews />
+      <ContactViews />
     </>
   )
 }

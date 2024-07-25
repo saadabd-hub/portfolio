@@ -25,11 +25,15 @@ const useCustomHooks = () => {
     }
   }, [])
 
+  const handleRouterPush = useCallback(() => {
+    router.push('/#contact');
+  }, [router]);
+
   useEffect(() => {
     if (isSectionVisible) {
-      router.push('/#contact');
+      handleRouterPush()
     }
-  }, [isSectionVisible]);
+  }, [isSectionVisible, contactRef]);
 
   return {
     methods: {
